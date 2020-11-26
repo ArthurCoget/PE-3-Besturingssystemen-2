@@ -3,7 +3,7 @@ COPY src /usr/src/myapp/src
 COPY pom.xml /usr/src/myapp/pom.xml
 RUN mvn install
 #Download all required dependencies into one layer
-RUN mvn -B dependency:resolve dependency:resolve-plugins
+RUN mvn clean install
 # Build application
 RUN mvn package
 
