@@ -26,10 +26,8 @@ jobs:
     name: Push Docker image to Docker Hub
     runs-on: ubuntu-latest
     steps:
-      - name: Check out the repo
-        uses: actions/checkout@v2
       - name: Push to Docker Hub
-        uses: mr-smithers-excellent/docker-build-push@v5
+        uses: mr-smithers-excellent/docker-build-push@v4
         with:
           username: ${{ secrets.USERNAME }}
           password: ${{ secrets.PASSWORD }}
