@@ -1,12 +1,9 @@
 FROM maven:3.5-jdk-8 as BUILD
-# create app folder for sources
-RUN mkdir -p /build
-WORKDIR /build
-COPY pom.xml /build
+COPY src /usr/src/myapp/src
+COPY pom.xml /usr/src/myapp/
+RUN mvn install
 #Download all required dependencies into one layer
 RUN mvn -B dependency:resolve dependency:resolve-plugins
-#Copy source code
-COPY src /build/src
 # Build application
 RUN mvn package
 
