@@ -29,11 +29,12 @@ jobs:
       - name: Check out the repo
         uses: actions/checkout@v2
       - name: Push to Docker Hub
-        uses: docker/build-push-action@v1
+        uses: mr-smithers-excellent/docker-build-push@v5
         with:
           username: ${{ secrets.USERNAME }}
           password: ${{ secrets.PASSWORD }}
-          repository: arthurcogetucll/githubactions
-          tag_with_ref: true
+          image: arthurcogetucll/githubactions
+          registry: docker.io
+          tag: latest
       
     
