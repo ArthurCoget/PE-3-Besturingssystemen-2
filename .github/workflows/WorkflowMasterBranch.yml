@@ -33,5 +33,5 @@ jobs:
         with:
           username: ${{ secrets.USERNAME }}
           password: ${{ secrets.PASSWORD }}
-          repository: my-docker-hub-namespace/my-docker-hub-repository
+          repository: arthurcogetucll/githubactions
           tag_with_ref: latest
