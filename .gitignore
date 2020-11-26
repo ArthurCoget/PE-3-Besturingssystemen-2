@@ -2,7 +2,6 @@ reated by https://www.gitignore.io/api/java,maven,intellij,java-web
 
 *.iml
 docker-compose.yml
-Dockerfile
 Jenkinsfile
 
 ### Intellij ###
