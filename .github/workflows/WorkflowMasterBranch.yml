@@ -21,4 +21,17 @@ jobs:
           restore-keys: ${{ runner.os }}-m2 
       - name: Test with maven
         run: mvn -B test --file pom.xml 
-      
+        
+  DockerHub:
+    name: Push Docker image to Docker Hub
+    runs-on: ubuntu-latest
+    steps:
+      - name: Check out the repo
+        uses: actions/checkout@v2
+      - name: Push to Docker Hub
+        uses: docker/build-push-action@v1
+        with:
+          username: ${{ secrets.USERNAME }}
+          password: ${{ secrets.PASSWORD }}
+          repository: arthurcogetucll/githubactions
+          tag_with_ref: latest
