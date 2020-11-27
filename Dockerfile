@@ -5,4 +5,4 @@ RUN mvn -f /usr/src/myapp/pom.xml compiler:compile war:war
 RUN ls -al /usr/src/myapp/target
 
 FROM tomcat:7.0
-COPY --from=BUILD /usr/src/myapp/target/project-ucll-1.0-SNAPSHOT.war /usr/local/tomcat/webapps/ROOT.war
+COPY --from=BUILD /usr/src/myapp/target/*.war /usr/local/tomcat/webapps/ROOT.war
