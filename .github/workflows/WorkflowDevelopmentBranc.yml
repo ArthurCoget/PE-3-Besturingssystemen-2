@@ -2,9 +2,7 @@ name: Master
 
 on:
   push:
-    branches: [ master ]
-    tags:
-      -'v*'
+    branches: [ development ]
 jobs:
   run_tests:
     runs-on: ubuntu-latest
@@ -37,17 +35,6 @@ jobs:
           password: ${{ secrets.PASSWORD }}
           repository: arthurcogetucll/githubactions
           registry: docker.io
-          tags: latest
+          tags: dev
       
-  build:
-    name: Create Release
-    runs-on: ubuntu-latest
-    steps:
-      - uses: actions/create-release@v1
-        env:
-          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-        with:
-          tag_name: V1.0
-          release_name: Release v1.0
-          draft: false
-          prerelease: false  
+ 
