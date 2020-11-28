@@ -1,7 +1,8 @@
 name: Master
 
 on:
-  push: 
+  push:
+    branches: [ master ]
     tags:
       -'v*'
 jobs:
