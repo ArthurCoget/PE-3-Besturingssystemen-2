@@ -2,9 +2,9 @@ name: Master
 
 on:
   push: 
-    branches: [ master ]
     tags: 
       - 'v*'
+    branches: [ master ]
 jobs:
   run_tests:
     runs-on: ubuntu-latest
