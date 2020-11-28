@@ -43,4 +43,9 @@ jobs:
     name: Create Release
     runs-on: ubuntu-latest
     steps:
-      - uses: technote-space/release-github-actions@v6  
+      - uses: actions/create-release@v1.1.4
+        with:
+          tag_name: '1.0'
+          release_name: 'Release v1.0'
+          draft: false
+          prerelease: false  
