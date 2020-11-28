@@ -3,7 +3,7 @@ name: Master
 on:
   push: 
     branches: [ master ]
-    tags: 'v*'
+    tags: -'v*'
 jobs:
   run_tests:
     runs-on: ubuntu-latest
